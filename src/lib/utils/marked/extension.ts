@@ -76,6 +76,44 @@ function detailsRenderer(token: any) {
   </details>`;
 }
 
+function thinkTokenizer(src) {
+	const detailsRegex = /^<think>\n/;
+
+	if (detailsRegex.test(src)) {
+		const endIndex = findMatchingClosingTag(src, '<think>', '</think>');
+		if (endIndex === -1) return;
+
+		const fullMatch = src.slice(0, endIndex);
+		let content = fullMatch.slice(8, -8).trim(); // Remove <think> and </think>
+
+		return {
+			type: 'think',
+			raw: fullMatch,
+			text: content
+		};
+	}
+}
+
+function thinkStart(src) {
+	return src.match(/^<think>/) ? 0 : -1;
+}
+
+function thinkRenderer(token) {
+	return `<details>
+  ${token.text}
+  </details>`;
+}
+
+function thinkExtension() {
+	return {
+		name: 'think',
+		level: 'block',
+		start: thinkStart,
+		tokenizer: thinkTokenizer,
+		renderer: thinkRenderer
+	};
+}
+
 // Extension wrapper function
 function detailsExtension() {
 	return {
@@ -89,6 +127,6 @@ function detailsExtension() {
 
 export default function (options = {}) {
 	return {
-		extensions: [detailsExtension(options)]
+		extensions: [detailsExtension(options), thinkExtension(options)]
 	};
 }
