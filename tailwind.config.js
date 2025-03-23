@@ -9,18 +9,18 @@ export default {
 		extend: {
 			colors: {
 				gray: {
-					50: 'var(--color-gray-50, #f9f9f9)',
-					100: 'var(--color-gray-100, #ececec)',
-					200: 'var(--color-gray-200, #e3e3e3)',
-					300: 'var(--color-gray-300, #cdcdcd)',
-					400: 'var(--color-gray-400, #b4b4b4)',
-					500: 'var(--color-gray-500, #9b9b9b)',
-					600: 'var(--color-gray-600, #676767)',
-					700: 'var(--color-gray-700, #4e4e4e)',
-					800: 'var(--color-gray-800, #333)',
-					850: 'var(--color-gray-850, #262626)',
-					900: 'var(--color-gray-900, #171717)',
-					950: 'var(--color-gray-950, #0d0d0d)'
+					50: 'var(--color-gray-50, #D4ECFF)', /* Azul muy claro */
+					100: 'var(--color-gray-100, #B8E0FF)', /* Azul pastel */
+					200: 'var(--color-gray-200, #9CD4FF)', /* Azul suave */
+					300: 'var(--color-gray-300, #72C1FF)', /* Azul intermedio */
+					400: 'var(--color-gray-400, #4DA9E6)', /* Azul más intenso */
+					500: 'var(--color-gray-500, #2A91CC)', /* Azul fuerte */
+					600: 'var(--color-gray-600, #0165B4)', /* Azul oscuro */
+					700: 'var(--color-gray-700, #014F8A)', /* Azul más oscuro */
+					800: 'var(--color-gray-800, #013960)', /* Azul casi negro */
+					850: 'var(--color-gray-850, #012740)', /* Azul muy oscuro */
+					900: 'var(--color-gray-900, #191919)', /* Negro grisáceo */
+					950: 'var(--color-gray-950, #0D0D0D)' /* Negro absoluto */
 				}
 			},
 			typography: {
